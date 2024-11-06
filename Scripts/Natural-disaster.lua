@@ -16,7 +16,8 @@ _G.autofarm = true
 -- Functions 
 function autofarm()
     while _G.autofarm == true do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-250.0177001953125, 179.5, 290.1176452636719)
+    wait(0.00001)
     end
 end
 
@@ -33,9 +34,27 @@ local autofarm = Tabs.Misc:AddToggle("Auto-Farm",
 {
     Title = "auto farm", 
     Description = "Farm wins automatically",
-    Default = false
+    Default = false,
     Callback = function(state)
             _G.autofarm = state
             autofarm()
     end 
+})
+
+-- Buttons
+
+Tabs.Teleports:AddButton({
+    Title = "Tower",
+    Description = "Teleport to the tower",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279.40301513671875, 179.49998474121094, 340.9585876464844)
+    end
+})
+
+Tabs.Teleports:AddButton({
+    Title = "Island",
+    Description = "Teleport to the island",
+    Callback = function()
+        print("Hello, world!")
+    end
 })
