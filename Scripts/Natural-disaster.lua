@@ -55,6 +55,6 @@ Tabs.Teleports:AddButton({
     Title = "Island",
     Description = "Teleport to the island",
     Callback = function()
-        print("Hello, world!")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-138.55470275878906, 47.400001525878906, 3.2469112873077393)
     end
 })
