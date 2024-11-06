@@ -61,6 +61,30 @@ Tabs.Teleports:AddButton({
     end
 })
 
+Tabs.Teleports:AddButton({
+    Title = "Free ballon (CLIENT-SIDE)",
+    Description = "take a free balloon",
+    Callback = function()
+        local function createNotif(title,text,icon,duration)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = title; 
+		Text = text;
+		Icon = icon; 
+		Duration = duration; 
+	})
+end
+ 
+if game.Workspace:FindFirstChild("GreenBalloon", true) then -- Check for stealable GreenBalloon 
+	balloonClone = game.Workspace:FindFirstChild("GreenBalloon", true):Clone() -- clone it 
+	balloonClone.Parent = game:GetService("Players").LocalPlayer.Backpack
+	createNotif("garfield","🎈 balloon succesfully stolen!",nil,"5")
+else 
+	createNotif("garfield","🎈 there is no balloons.",nil,"5")
+end 
+            
+    end
+})
+
 -- Settings
 
 SaveManager:SetLibrary(Fluent)
