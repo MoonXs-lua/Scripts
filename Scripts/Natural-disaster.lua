@@ -10,8 +10,18 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
 
+-- Variables
+_G.autofarm = true
+
+-- Functions 
+function autofarm()
+    while _G.autofarm == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+    end
+
 local Tabs = {
     Home = Window:AddTab({ Title = "Home", Icon = "" }),
     Teleports = Window:AddTab({ Title = "Teleports", Icon = "" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "" })
 }
