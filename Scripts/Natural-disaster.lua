@@ -61,7 +61,7 @@ Tabs.Teleports:AddButton({
     end
 })
 
-Tabs.Teleports:AddButton({
+Tabs.Misc:AddButton({
     Title = "Free ballon (CLIENT-SIDE)",
     Description = "take a free balloon",
     Callback = function()
