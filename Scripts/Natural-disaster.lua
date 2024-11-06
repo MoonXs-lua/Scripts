@@ -18,6 +18,7 @@ function autofarm()
     while _G.autofarm == true do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
     end
+end
 
 local Tabs = {
     Home = Window:AddTab({ Title = "Home", Icon = "" }),
@@ -25,3 +26,16 @@ local Tabs = {
     Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "" })
 }
+
+-- Toggles
+
+local autofarm = Tabs.Misc:AddToggle("Auto-Farm", 
+{
+    Title = "auto farm", 
+    Description = "Farm wins automatically",
+    Default = false
+    Callback = function(state)
+            _G.autofarm = state
+            autofarm()
+    end 
+})
